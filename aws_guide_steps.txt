@@ -1,0 +1,72 @@
+What is cloud
+
+
+
+
+IAM(Identity and access management)
+User
+Policies
+Groups
+Roles
+
+Steps that how to create users usig aws console:
+    Sign in to the AWS Management Console with an admin account.
+    
+    Go to IAM → Users → Add users.
+    
+    Enter User name (e.g., dev-user).
+    
+    Select AWS access type:
+    
+    Console access — for logging in to the AWS web console.
+    
+    Programmatic access — for CLI, SDK, API usage.
+    
+    Set permissions:
+    
+    Add user to an existing group with predefined permissions.
+    
+    Or attach policies directly (not recommended — use groups for manageability).
+    
+    Review & create the user.
+    
+    Download credentials (for programmatic access, you’ll get Access Key ID and Secret Access Key). Store them securely.
+    
+    (Optional) Enable MFA for added security:
+    
+    Go to Security credentials tab → Assign MFA device → follow instructions.
+
+Steps that how to create users usig aws CLI:
+    1) Create an IAM Group
+    Sign in to AWS Management Console as an admin.
+    
+    Go to IAM → User groups (left menu) → Create group.
+    
+    Enter a Group name — e.g., developers.
+    
+    Attach policies now:
+    
+    Search and check:
+    
+    AmazonS3ReadOnlyAccess
+    
+    CloudWatchReadOnlyAccess
+    
+    AmazonEC2ReadOnlyAccess
+    
+    Click Create group.
+
+
+3) Verify Group Membership
+    Go to IAM → Users → Click on dev-user.
+    
+    Under Groups, you should see developers.
+    
+    Under Permissions, you should see:
+    
+    AmazonS3ReadOnlyAccess
+    
+    CloudWatchReadOnlyAccess
+    
+    AmazonEC2ReadOnlyAccess
+
